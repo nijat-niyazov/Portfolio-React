@@ -1,0 +1,13 @@
+@use './variables' as variables;
+
+@mixin tag($content, $left) {
+  content: '<' + $content + 'h1>';
+  font-family: 'La Belle Aurore';
+  color: variables.$yellow;
+  font-size: 18px;
+  position: absolute;
+  line-height: 18px;
+  opacity: 0.6;
+  left: -$left + px;
+  animation: fadeIn 1s 1.7s backwards;
+}

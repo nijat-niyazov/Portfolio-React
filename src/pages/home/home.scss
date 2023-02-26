@@ -1,3 +1,6 @@
+@use '../../globalStyles/mixin' as mixin;
+@use '../../globalStyles/variables' as variables;
+
 .home-page {
   .text-zone {
     position: absolute;
@@ -14,25 +17,13 @@
     font-family: 'Coolvetica';
 
     &::before {
-      content: '<h1>';
-      font-family: 'La Belle Aurore';
-      color: #ffd700;
-      font-size: 18px;
-      position: absolute;
+      @include mixin.tag('', 50);
       margin-top: 10px;
-      left: -50px;
-      opacity: 0.6;
     }
     &::after {
-      content: '<h1>';
-      font-family: 'La Belle Aurore';
-      color: #ffd700;
-      font-size: 18px;
-      position: absolute;
+      @include mixin.tag('/', -350);
       margin-top: 40px;
       margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
-      opacity: 0.6;
     }
     img {
       width: 32px;
@@ -56,7 +47,7 @@ h2 {
 }
 
 .flat-btn {
-  color: #ffd700;
+  color: variables.$yellow;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 4px;
@@ -64,12 +55,12 @@ h2 {
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px;
-  border: 1px solid #ffd700;
+  border: 1px solid variables.$yellow;
   float: left;
   margin-top: 40px;
   // white-space: nowrap;
   &:hover {
-    background-color: #ffd700;
+    background-color: variables.$yellow;
     color: #333;
   }
 }

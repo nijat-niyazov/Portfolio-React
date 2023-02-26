@@ -6,7 +6,13 @@ const AnimatedLets = ({ className, stringArr, startPoint }) => {
     <span>
       {stringArr?.map((str, i) => {
         return (
-          <span key={i} className={`${className} _${i + startPoint}`}>
+          <span
+            key={i}
+            className={`${className} _${i + startPoint}`}
+            // style={{
+            //   animationDelay: `${i / 10}s`,
+            // }}
+          >
             {str}
           </span>
         );

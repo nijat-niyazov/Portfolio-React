@@ -1,68 +1,56 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Loader from 'react-loaders';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-s.png';
 import AnimatedLets from '../../components/animateLets/AnimatedLets';
+import { useLetterAnimations } from '../../utils/letters';
 import './home.scss';
+import Logo from './logo/Logo';
 
 const Home = () => {
-  const [letters, setLetters] = useState('text-animate');
-  // const nameArr = ['n', 'i', 'y', 'a', 'z', 'o', 'v'];
-  const nameArr = ['i', 'j', 'a', 't'];
-  const jobArr = [
-    'r',
-    'e',
-    'a',
-    'c',
-    't',
-    '',
-    'd',
-    'e',
-    'v',
-    'e',
-    'l',
-    'o',
-    'p',
-    'e',
-    'r',
-  ];
-
-  const h1 = ['H', 'i'];
-  const me = ['I', "'", 'm'];
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLetters('text-animate-hover');
-    }, 4000);
-  }, []);
+  const { className, arr: hi } = useLetterAnimations('Hi,');
+  const { arr: me } = useLetterAnimations("I'm");
+  const { arr: name } = useLetterAnimations('ijat');
+  const { arr: job } = useLetterAnimations('react developer');
 
   return (
-    <div className="container home-page">
-      <div className="text-zone">
-        <h1>
-          <AnimatedLets className={letters} stringArr={h1} startPoint={10} />
-          , <br />
-          <AnimatedLets className={letters} stringArr={me} startPoint={12} />
-          <img src={logo} alt="logo" />
-          {/* ijat */}
-          <AnimatedLets
-            className={letters}
-            stringArr={nameArr}
-            startPoint={15}
-          />
-          <br />
-          <AnimatedLets
-            className={letters}
-            stringArr={jobArr}
-            startPoint={19}
-          />
-          {/* and I'm Front-End Engineer */}
-        </h1>
-        <h2> with skills Javascript && React </h2>
-        <Link to="/contact" className="flat-btn">
-          Contact me
-        </Link>
+    <>
+      <div className="container home-page">
+        <div className="text-zone">
+          <h1>
+            <AnimatedLets
+              className={className}
+              stringArr={hi}
+              startPoint={10}
+            />
+            <br />
+            <AnimatedLets
+              className={className}
+              stringArr={me}
+              startPoint={12}
+            />
+            <img src={logo} alt="logo" />
+            <AnimatedLets
+              className={className}
+              stringArr={name}
+              startPoint={15}
+            />
+            <br />
+            <AnimatedLets
+              className={className}
+              stringArr={job}
+              startPoint={19}
+            />
+          </h1>
+          <h2> with skills Javascript && React </h2>
+          <Link to="/contact" className="flat-btn">
+            Contact me
+          </Link>
+        </div>
+        <Logo />
       </div>
-    </div>
+      <Loader type="ball-spin-fade-loader" />
+    </>
   );
 };
 

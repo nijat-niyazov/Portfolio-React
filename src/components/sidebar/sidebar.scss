@@ -1,3 +1,5 @@
+@use '../../globalStyles/_variables' as variables;
+
 .navbar {
   background-color: #181818;
   width: 60px;
@@ -45,7 +47,7 @@
       }
 
       &:hover {
-        color: #ffd700;
+        color: variables.$yellow;
         svg {
           opacity: 0;
         }
@@ -84,7 +86,7 @@
 
     .active {
       svg {
-        color: #ffd700;
+        color: variables.$yellow;
       }
     }
   }
@@ -107,7 +109,7 @@
         line-height: 16px;
 
         &:hover svg {
-          color: #ffd700;
+          color: variables.$yellow;
         }
       }
     }
