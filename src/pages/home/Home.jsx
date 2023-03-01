@@ -1,10 +1,10 @@
 import React from 'react';
 import Loader from 'react-loaders';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo-s.png';
-import AnimatedLets from '../../components/animateLets/AnimatedLets';
-import { useLetterAnimations } from '../../utils/letters';
 import './home.scss';
+import logo from '../../assets/images/logo-s.png';
+import { AnimatedLets } from '../../components/exporter';
+import { useLetterAnimations } from '../../utils/letters';
 import Logo from './logo/Logo';
 
 const Home = () => {

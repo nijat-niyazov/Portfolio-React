@@ -1,11 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Sidebar from '../components/sidebar/Sidebar';
+import { Sidebar } from '../components/exporter';
 import './index.scss';
 
-const RooterLayout = () => {
+const Layout = () => {
   return (
-    <div className="App">
+    <div className="layout">
       <Sidebar />
       <div className="page">
         <span className="tags top-tags">&lt;/ body &gt;</span>
@@ -19,4 +19,4 @@ const RooterLayout = () => {
   );
 };
 
-export default RooterLayout;
+export default Layout;

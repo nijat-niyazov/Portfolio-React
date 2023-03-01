@@ -11,3 +11,13 @@
   left: -$left + px;
   animation: fadeIn 1s 1.7s backwards;
 }
+
+@mixin form {
+  width: 100%;
+  border: 0;
+  background-color: variables.$contact-bg;
+  height: 50px;
+  font-size: 16px;
+  color: #fff;
+  box-sizing: border-box;
+}

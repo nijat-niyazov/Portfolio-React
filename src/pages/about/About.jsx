@@ -7,9 +7,9 @@ import {
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Loader from 'react-loaders';
-import AnimatedLets from '../../components/animateLets/AnimatedLets';
+import { AnimatedLets } from '../../components/exporter';
 import { useLetterAnimations } from '../../utils/letters';
 import './about.scss';
 

@@ -14,10 +14,12 @@ import {
 const Sidebar = () => {
   return (
     <div className="navbar">
+
       <Link className="logo" to="/">
         <img src={logo} alt="logo" />
         <img className="sub-logo" src={logoSub} alt="logoSub" />
       </Link>
+      
       <nav className="nav-elements">
         <NavLink to="/">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
