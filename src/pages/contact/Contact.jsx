@@ -5,9 +5,11 @@ import { useLetterAnimations } from '../../utils/letters';
 import './contact.scss';
 import emailjs from '@emailjs/browser';
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import { useTitleSetter } from '../../utils/titleSetter';
 
 const Contact = () => {
   const { className, arr } = useLetterAnimations('Contact me');
+  useTitleSetter('Contact');
 
   // const options = {
   //   enableHighAccuracy: true,

@@ -7,14 +7,14 @@ import {
   faSass,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import Loader from 'react-loaders';
 import { AnimatedLets } from '../../components/exporter';
-import { useLetterAnimations } from '../../utils/letters';
+import { animatedLetters, titleSetter } from '../../utils/exporter';
 import './about.scss';
 
 const About = () => {
-  const { className, arr } = useLetterAnimations('About me');
+  const { className, arr } = animatedLetters('About me');
+  titleSetter('About');
 
   return (
     <>
