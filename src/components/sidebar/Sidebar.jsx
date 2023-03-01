@@ -17,7 +17,6 @@ import { AnimatedLets } from '../exporter';
 
 const Sidebar = () => {
   const { className, arr } = animatedLetters('ijat');
-  console.log(className, arr);
 
   return (
     <div className="navbar">

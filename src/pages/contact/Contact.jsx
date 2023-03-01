@@ -7,6 +7,7 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
 import { animatedLetters, titleSetter } from '../../utils/exporter';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Map from './Map';
 
 const Contact = () => {
   const { className, arr } = animatedLetters('Contact me');
@@ -40,14 +41,16 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'service_wzq538m',
-        'template_esz04hi',
-        form.current,
-        '2aA2dI64TuKIY5SO2'
+        'service_6zplz7v', // SERVICE_ID
+        'template_z3drwvk', // TEMPLATE_ID
+        form.current, // ref.current
+        '2aA2dI64TuKIY5SO2' // PUBLIC_KEY
       )
       .then(
         () => {
           toast.success('Message succesfully sent!');
+          e.target.reset(); // to reset your form
+          // window.location.reload(false);
         },
         error => {
           toast.error('Failed to send the message. Try again!');
@@ -80,7 +83,7 @@ const Contact = () => {
                   <li className="half">
                     <input
                       type="text"
-                      name="name"
+                      name="user_name"
                       placeholder="Your name"
                       required
                     />
@@ -88,7 +91,7 @@ const Contact = () => {
                   <li className="half">
                     <input
                       type="email"
-                      name="email"
+                      name="user_email"
                       placeholder="Your email"
                       required
                     />
@@ -97,13 +100,17 @@ const Contact = () => {
                 <li>
                   <input
                     type="text"
-                    name="subject"
+                    name="user_subject"
                     placeholder="Subjects"
                     required
                   />
                 </li>
                 <li>
-                  <textarea name="message" placeholder="Message" required />
+                  <textarea
+                    name="user_message"
+                    placeholder="Message"
+                    required
+                  />
                 </li>
               </ul>
               <input type="submit" value="SEND" className="send-button" />
@@ -121,7 +128,7 @@ const Contact = () => {
           Yasamal 156, <br />
           <span>nidzhat.niyazov@gmail.com</span>
         </div>
-        <div className="map-wrap">
+        {/* <div className="map-wrap">
           <MapContainer center={[40.389, 49.803]} zoom={20}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -131,6 +138,9 @@ const Contact = () => {
               <Popup>I live here, come over for a cup of coffee :) </Popup>
             </Marker>
           </MapContainer>
+        </div> */}
+        <div className="map-wrap">
+          <Map />
         </div>
       </div>
       <Loader type="pacman" />
