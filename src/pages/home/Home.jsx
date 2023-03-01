@@ -2,15 +2,16 @@ import React from 'react';
 import Loader from 'react-loaders';
 import { Link } from 'react-router-dom';
 import './home.scss';
-import logo from '../../assets/images/logo-s.png';
+import logo from '../../assets/images/n-400.png';
 import { AnimatedLets } from '../../components/exporter';
 import { useLetterAnimations } from '../../utils/letters';
 import Logo from './logo/Logo';
 
 const Home = () => {
-  const { className, arr: hi } = useLetterAnimations('Hi,');
-  const { arr: me } = useLetterAnimations("I'm");
+  const { className, arr: hi } = useLetterAnimations("Hi, I'm");
+  // const { arr: me } = useLetterAnimations("I'm ");
   const { arr: name } = useLetterAnimations('ijat');
+  const { arr: introduce } = useLetterAnimations("and I'm a");
   const { arr: job } = useLetterAnimations('react developer');
 
   return (
@@ -23,17 +24,17 @@ const Home = () => {
               stringArr={hi}
               startPoint={10}
             />
-            <br />
-            <AnimatedLets
-              className={className}
-              stringArr={me}
-              startPoint={12}
-            />
-            <img src={logo} alt="logo" />
+            <img className="letter-n" src={logo} alt="logo" />
             <AnimatedLets
               className={className}
               stringArr={name}
               startPoint={15}
+            />
+            <br />
+            <AnimatedLets
+              className={className}
+              stringArr={introduce}
+              startPoint={19}
             />
             <br />
             <AnimatedLets

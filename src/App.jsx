@@ -5,7 +5,7 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import Layout from './layouts/RooterLayout';
+import { Layout } from './components/exporter';
 import { Home, About, Contact } from './pages/exporter';
 
 function App() {

@@ -9,6 +9,29 @@
   z-index: 3;
   min-height: 500px;
 
+  .name {
+    position: absolute;
+    color: variables.$yellow;
+    top: 6.5%;
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    span {
+      span {
+        display: flex;
+        flex-direction: column;
+        opacity: 0.7;
+        cursor: default;
+        &:hover {
+          color: #fff;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .logo {
     display: block;
     padding: 8px 0;
