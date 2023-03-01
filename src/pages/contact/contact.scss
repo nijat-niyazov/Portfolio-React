@@ -5,6 +5,13 @@ p {
   text-align: justify;
 }
 
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+.Toastify__toast-container--top-left {
+  margin-left: 60px;
+  margin-top: 30px;
+}
 .contact-form {
   width: 100%;
   margin-top: 20px;

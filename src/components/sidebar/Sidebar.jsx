@@ -21,7 +21,7 @@ const Sidebar = () => {
       </Link>
       
       <nav className="nav-elements">
-        <NavLink to="/">
+        <NavLink to="/" className="home-link">
           <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
         </NavLink>
         <NavLink to="about" className="about-link">

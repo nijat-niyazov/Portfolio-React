@@ -1,15 +1,16 @@
 import React, { useRef } from 'react';
 import Loader from 'react-loaders';
-import { AnimatedLets } from '../../components/exporter';
-import { useLetterAnimations } from '../../utils/letters';
+import { AnimatedLets, Toastify } from '../../components/exporter';
 import './contact.scss';
 import emailjs from '@emailjs/browser';
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
-import { useTitleSetter } from '../../utils/titleSetter';
+import { animatedLetters, titleSetter } from '../../utils/exporter';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-  const { className, arr } = useLetterAnimations('Contact me');
-  useTitleSetter('Contact');
+  const { className, arr } = animatedLetters('Contact me');
+  titleSetter('Contact');
 
   // const options = {
   //   enableHighAccuracy: true,
@@ -45,13 +46,11 @@ const Contact = () => {
         '2aA2dI64TuKIY5SO2'
       )
       .then(
-        result => {
-          alert('Message succesfully sent!');
-          // window.location.reload(false)
-          console.log(result);
+        () => {
+          toast.success('Message succesfully sent!');
         },
         error => {
-          alert('Failed to send the message. Try again!');
+          toast.error('Failed to send the message. Try again!');
           console.log(error.text);
         }
       );
@@ -60,6 +59,7 @@ const Contact = () => {
   return (
     <>
       <div className="container contact-page">
+        <Toastify />
         <div className="text-zone">
           <h1>
             <AnimatedLets
@@ -116,12 +116,13 @@ const Contact = () => {
         </div>
         <div className="info-map">
           Nijat Niyazov, <br />
-          Azerbaijan,Baku, <br />
+          Azerbaijan, <br />
+          Baku, <br />
           Yasamal 156, <br />
           <span>nidzhat.niyazov@gmail.com</span>
         </div>
         <div className="map-wrap">
-          <MapContainer center={[40.389, 49.803]} zoom={1}>
+          <MapContainer center={[40.389, 49.803]} zoom={20}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
