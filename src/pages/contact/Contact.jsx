@@ -1,38 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Loader from 'react-loaders';
 import { AnimatedLets, Toastify } from '../../components/exporter';
+import { toast } from 'react-toastify';
 import './contact.scss';
 import emailjs from '@emailjs/browser';
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
 import { animatedLetters, titleSetter } from '../../utils/exporter';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Map from './Map';
+import LeafMap from './LeafMap';
+
+const info =
+  "Our restaurant has been serving delicious dishes and desserts since 1990. Since its opening, our restaurant has been known for its mouth-watering food, warm atmosphere and friendly staff. In the beginning, our menu featured a variety of traditional dishes, but over the years, as tastes and trends have changed, we have adapted our menu to include more contemporary options. Despite these changes, we have always remained true to our roots, and our famous dishes from the 90s are still a staple on our menu. Our restaurant quickly gained a reputation for serving some of the best food in the area, and it wasn't long before we were attracting food critics and culinary enthusiasts from all over the city. But it wasn't just our savory dishes that drew people in; our desserts were also a huge hit. We have always had a passion for pastry and have spent years perfecting our recipes for cakes, pies, and other sweet treats. It's this dedication that has earned us the reputation of having the best desserts in town. As the years have gone by, we have seen many changes in the restaurant industry, but one thing has remained constant: our commitment to quality. Today, our restaurant is still a favorite among locals and visitors alike, and we look forward to many more years of serving delicious food and memories to our customers. We are proud to have been a part of the community for over three decades and look forward to serving for many more to come.";
 
 const Contact = () => {
   const { className, arr } = animatedLetters('Contact me');
   titleSetter('Contact');
-
-  // const options = {
-  //   enableHighAccuracy: true,
-  //   timeout: 5000,
-  //   maximumAge: 0,
-  // };
-
-  // function success(pos) {
-  //   const crd = pos.coords;
-
-  //   console.log('Your current position is:');
-  //   console.log(`Latitude : ${crd.latitude}`);
-  //   console.log(`Longitude: ${crd.longitude}`);
-  //   console.log(`More or less ${crd.accuracy} meters.`);
-  // }
-
-  // function error(err) {
-  //   console.warn(`ERROR(${err.code}): ${err.message}`);
-  // }
-
-  // navigator.geolocation.getCurrentPosition(success, error, options);
 
   const form = useRef();
 
@@ -61,6 +41,7 @@ const Contact = () => {
 
   return (
     <>
+      {/* <TutMap /> */}
       <div className="container contact-page">
         <Toastify />
         <div className="text-zone">
@@ -76,7 +57,21 @@ const Contact = () => {
             large projects. However, if you have other request or question,
             don't hesitate to contact me using below form either.
           </p>
-          <div className="contact-form">
+          <section className="contact-form">
+            {/* <p>
+              {info.split('.').map((sentence, dot) => {
+                if ((dot + 1) % 3 === 0) {
+                  return (
+                    <span key={dot}>
+                      {sentence}.
+                      <br />
+                      <br />
+                    </span>
+                  );
+                }
+                return <span key={dot}>{sentence}.</span>;
+              })}
+            </p> */}
             <form action="" ref={form} onSubmit={sendEmail}>
               <ul>
                 <div className="halfs">
@@ -114,34 +109,21 @@ const Contact = () => {
                 </li>
               </ul>
               <input type="submit" value="SEND" className="send-button" />
-
-              {/* <button type="submit" className="send-button">
-                SEND
-              </button> */}
             </form>
+          </section>
+        </div>
+        <section className="map-section">
+          <div className="info-map">
+            Nijat Niyazov, <br />
+            Azerbaijan, <br />
+            Baku, <br />
+            Yasamal 156, <br />
+            <span>nidzhat.niyazov@gmail.com</span>
           </div>
-        </div>
-        <div className="info-map">
-          Nijat Niyazov, <br />
-          Azerbaijan, <br />
-          Baku, <br />
-          Yasamal 156, <br />
-          <span>nidzhat.niyazov@gmail.com</span>
-        </div>
-        {/* <div className="map-wrap">
-          <MapContainer center={[40.389, 49.803]} zoom={20}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={[40.389, 49.803]}>
-              <Popup>I live here, come over for a cup of coffee :) </Popup>
-            </Marker>
-          </MapContainer>
-        </div> */}
-        <div className="map-wrap">
-          <Map />
-        </div>
+          <div className="map-wrap">
+            <LeafMap />
+          </div>
+        </section>
       </div>
       <Loader type="pacman" />
     </>
@@ -149,3 +131,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// export const contacLoaders = async () => {
+
+// };

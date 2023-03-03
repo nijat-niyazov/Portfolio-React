@@ -1,0 +1,12 @@
+{
+  "icons": {
+    "homeIcon": {
+      "iconSize": [40, 40],
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/2163/2163350.png"
+    },
+    "coffeeIcon": {
+      "iconSize": [40, 40],
+      "iconUrl": "https://cdn-icons-png.flaticon.com/512/1047/1047503.png"
+    }
+  }
+}
