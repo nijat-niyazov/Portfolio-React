@@ -48,7 +48,7 @@ const Home = () => {
             Contact me
           </Link>
         </div>
-        <Logo />
+        {/* <Logo /> */}
       </div>
       <Loader type="ball-spin-fade-loader" />
     </>
