@@ -3,13 +3,6 @@ import 'leaflet/dist/leaflet.css';
 import { markers, clusterIcon } from './mapData';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 
-// const test = markers
-//   .at(1)
-//   .popUp
-
-// console.log(test);
-// console.log();
-
 const LeafMap = () => {
   return (
     <MapContainer center={[40.387318798444554, 49.81600596369627]} zoom={15}>
