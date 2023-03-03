@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { Toastify } from '../../../components/exporter';
+import './form.scss';
 
 const Form = () => {
   const form = useRef();

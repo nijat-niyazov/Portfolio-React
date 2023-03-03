@@ -1,0 +1,66 @@
+@use '../../../globalStyles/variables' as variables;
+@use '../../../globalStyles/mixin' as mixin;
+
+.Toastify__toast-container--top-left {
+  margin-left: 60px;
+  margin-top: 30px;
+}
+
+.contact-form {
+  width: 100%;
+  margin-top: 20px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    display: grid;
+    row-gap: 20px;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 2s 1s;
+      animation-fill-mode: forwards;
+      outline: none;
+    }
+    .halfs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+
+      .half {
+        width: 49%;
+      }
+    }
+
+    input[type='text'],
+    input[type='email'] {
+      @include mixin.form;
+      padding: 0 20px;
+    }
+    textarea {
+      @include mixin.form;
+      padding: 20px;
+      min-height: 150px;
+    }
+  }
+
+  .send-button {
+    color: variables.$yellow;
+    background: 0 0;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 8px 10px;
+    border: 1px solid variables.$yellow;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+  }
+}

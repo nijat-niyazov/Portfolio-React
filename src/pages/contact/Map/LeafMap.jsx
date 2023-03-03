@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { markers, clusterIcon } from './mapData';
 import MarkerClusterGroup from 'react-leaflet-cluster';
+import './map.scss';
 
 const LeafMap = () => {
   return (

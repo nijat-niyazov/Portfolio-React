@@ -19,11 +19,12 @@ const Contact = () => {
               startPoint={15}
             />
           </h1>
-          <p>
+          <p style={{ textAlign: 'justify', fontSize: '16px' }}>
             I am interested in freelance opportunities - especially ambitious or
             large projects. However, if you have other request or question,
             don't hesitate to contact me using below form either.
           </p>
+
           <section className="contact-form">
             <Form />
           </section>
