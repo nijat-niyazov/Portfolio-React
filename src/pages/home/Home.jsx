@@ -5,11 +5,10 @@ import './home.scss';
 import logo from '../../assets/images/n-400.png';
 import { AnimatedLets } from '../../components/exporter';
 import { useLetterAnimations } from '../../utils/letters';
-import Logo from './logo/Logo';
+// import Logo from './logo/Logo';
 
 const Home = () => {
   const { className, arr: hi } = useLetterAnimations("Hi, I'm");
-  // const { arr: me } = useLetterAnimations("I'm ");
   const { arr: name } = useLetterAnimations('ijat');
   const { arr: introduce } = useLetterAnimations("and I'm a");
   const { arr: job } = useLetterAnimations('react developer');
