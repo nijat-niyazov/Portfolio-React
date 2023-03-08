@@ -5,6 +5,7 @@ import MarkerClusterGroup from 'react-leaflet-cluster';
 import './map.scss';
 
 const LeafMap = () => {
+  // need adding points
   return (
     <MapContainer center={[40.387318798444554, 49.81600596369627]} zoom={15}>
       <TileLayer
