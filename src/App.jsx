@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { Layout } from './components/exporter';
-import { Home, About, Contact } from './pages/exporter';
+import { Home, About, Contact, Portfolio } from './pages/exporter';
 
 function App() {
   const router = createBrowserRouter(
@@ -15,6 +15,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="portfolio" element={<Portfolio />} />
       </Route>
     )
   );

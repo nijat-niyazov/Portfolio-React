@@ -1,0 +1,25 @@
+{
+  "portfolio": [
+    {
+      "cover": "/projects/restaurant.png",
+      "title": "Restaurant Page",
+      "description": "Landing page, slider, sorted menu, recipes of dishes, branches on map",
+      "stacks": "React18 / Bootsrap / Module CSS / Animation CSS",
+      "url": "https://nijat-restaurant-page-react18-js.vercel.app/"
+    },
+    {
+      "cover": "/projects/e-commerce.png",
+      "title": "Meshque.com (Clone) | E-commerce",
+      "description": "Landing page, slider, hover-change, add-to-bag",
+      "stacks": "React18 / Material UI / Module CSS / Redux Toolkit / Auto-Animate",
+      "url": "https://nijat-e-commerce-react18-js.vercel.app/"
+    },
+    {
+      "cover": "/projects/sticky.png",
+      "title": "Sticky Menu",
+      "description": "Menu with following stick animation - horizontal, vertical and fully captured.",
+      "stacks": "React18 / Module CSS / Animation CSS",
+      "url": "https://sticky-menu-react-js-nijat.vercel.app/"
+    }
+  ]
+}

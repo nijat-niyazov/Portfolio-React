@@ -108,6 +108,12 @@
       }
     }
 
+    .portfolio-link {
+      &:after {
+        content: 'PROJECTS';
+      }
+    }
+
     .active {
       svg {
         color: variables.$yellow;

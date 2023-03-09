@@ -40,19 +40,9 @@
   animation-delay: 1s;
 }
 
+.home-page,
 .about-page,
 .contact-page {
-  .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35%;
-    vertical-align: middle;
-    display: table-cell;
-    max-height: 90%;
-  }
-
   h1 {
     font-size: 53px;
     font-family: 'Coolvetica';
@@ -69,6 +59,29 @@
     &:after {
       @include mixins.tag('/', 30);
       margin-left: 320px;
+      bottom: -20px;
+    }
+  }
+}
+
+.portfolio-page {
+  h1 {
+    font-size: 53px;
+    font-family: 'Coolvetica';
+    color: variables.$yellow;
+    font-weight: 400;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+      @include mixins.tag('', 10);
+      margin-top: -20px;
+      margin-left: -50px;
+    }
+    &:after {
+      @include mixins.tag('/', 30);
+      margin-left: 250px;
       bottom: -20px;
     }
   }
@@ -90,6 +103,17 @@
     &:nth-of-type(3) {
       animation-delay: 1.3s;
     }
+  }
+
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    vertical-align: middle;
+    display: table-cell;
+    max-height: 90%;
   }
 
   .text-animate-hover {

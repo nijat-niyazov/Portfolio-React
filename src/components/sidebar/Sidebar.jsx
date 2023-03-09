@@ -6,7 +6,12 @@ import './sidebar.scss';
 import logo from '../../assets/images/n-400.png';
 import logoSub from '../../assets/images/logo_sub.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faHome, faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEnvelope,
+  faHome,
+  faSuitcase,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
   faGithub,
@@ -22,12 +27,7 @@ const Sidebar = () => {
     <div className="navbar">
       <Link className="logo" to="/">
         <img src={logo} alt="logo" />
-        {/* <img className="sub-logo" src={logoSub} alt="logoSub" /> */}
         <div className="name">
-          {/* <span className="letter">i</span>
-          <span className="letter">j</span>
-          <span className="letter">a</span>
-          <span className="letter">t</span> */}
           <AnimatedLets startPoint={15} className={className} stringArr={arr} />
         </div>
       </Link>
@@ -41,6 +41,9 @@ const Sidebar = () => {
         </NavLink>
         <NavLink to="/contact" className="contact-link">
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+        </NavLink>
+        <NavLink to="/portfolio" className="portfolio-link">
+          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
         </NavLink>
       </nav>
 
