@@ -1,13 +1,14 @@
-import React from 'react';
+import axios from 'axios';
 import Loader from 'react-loaders';
+import { useLoaderData } from 'react-router-dom';
 import { AnimatedLets } from '../../components/exporter';
 import { animatedLetters } from '../../utils/exporter';
 import './portfolio.scss';
-import portfolioData from '../../data/portfolio.json';
 import Project from './Project';
 
 const Projects = () => {
   const { className, arr: portfolio } = animatedLetters('Projects');
+  const projects = useLoaderData();
 
   return (
     <>
@@ -20,7 +21,7 @@ const Projects = () => {
           />
         </h1>
         <section className="projects-box">
-          {portfolioData?.portfolio.map((project, i) => (
+          {projects?.map((project, i) => (
             <Project key={i} data={project} />
           ))}
         </section>
@@ -31,3 +32,15 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export const projectLoder = async () => {
+  try {
+    const { data } = await axios.get('data/portfolio.json');
+    if (data) {
+      return data.projects;
+    }
+  } catch {
+    err => console.error(err.message);
+    return err.message;
+  }
+};
