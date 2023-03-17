@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 import { Layout } from './components/exporter';
 import './globalStyles/App.scss';
-import { About, Contact, Home, Portfolio } from './pages/exporter';
-import { projectLoder } from './pages/projects/Projects';
+import { About, Contact, Home, Main, Projects } from './pages/exporter';
+import { projectsLoader } from './pages/projects/Projects';
 
 function App() {
   const router = createBrowserRouter(
@@ -16,7 +16,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="portfolio" loader={projectLoder} element={<Portfolio />} />
+        <Route path="projects" loader={projectsLoader} element={<Projects />} />
+        <Route path="dashboard" element={<Main />} />
       </Route>
     )
   );

@@ -1,10 +1,12 @@
-import axios from 'axios';
+import { collection, getDocs } from 'firebase/firestore';
 import Loader from 'react-loaders';
 import { useLoaderData } from 'react-router-dom';
 import { AnimatedLets } from '../../components/exporter';
 import { animatedLetters } from '../../utils/exporter';
+import { database } from '../../utils/firebase';
 import './portfolio.scss';
 import Project from './Project';
+const publicEnvVar = import.meta.env.VITE_MY_ENV_VARIABLE;
 
 const Projects = () => {
   const { className, arr: portfolio } = animatedLetters('Projects');
@@ -13,6 +15,7 @@ const Projects = () => {
   return (
     <>
       <div className="container portfolio-page">
+        <p>{publicEnvVar}</p>
         <h1 className="page-title">
           <AnimatedLets
             startPoint={15}
@@ -33,14 +36,15 @@ const Projects = () => {
 
 export default Projects;
 
-export const projectLoder = async () => {
+export const projectsLoader = async () => {
   try {
-    const { data } = await axios.get('data/portfolio.json');
+    const data = await getDocs(collection(database, 'projects'));
     if (data) {
-      return data.projects;
+      const projects = data.docs.map(doc => doc.data());
+      // console.log(projects);
+      return projects;
     }
-  } catch {
-    err => console.error(err.message);
-    return err.message;
+  } catch (err) {
+    console.error(err.message);
   }
 };

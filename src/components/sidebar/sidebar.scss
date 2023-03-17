@@ -113,6 +113,11 @@
         content: 'PROJECTS';
       }
     }
+    .dashboard-link {
+      &:after {
+        content: 'DASHBOARD';
+      }
+    }
 
     .active {
       svg {

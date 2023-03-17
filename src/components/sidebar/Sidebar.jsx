@@ -3,20 +3,20 @@ import { Link, NavLink } from 'react-router-dom';
 import './sidebar.scss';
 // import logo from '../../assets/images/logo-s.png';
 // import logo from '../../assets/images/n-400.png';
-import logo from '../../assets/images/n-400.png';
-import logoSub from '../../assets/images/logo_sub.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faEnvelope,
-  faHome,
-  faSuitcase,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
   faGithub,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import {
+  faEnvelope,
+  faHome,
+  faLock,
+  faSuitcase,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../../assets/images/n-400.png';
 import { animatedLetters } from '../../utils/exporter';
 import { AnimatedLets } from '../exporter';
 
@@ -42,8 +42,11 @@ const Sidebar = () => {
         <NavLink to="/contact" className="contact-link">
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
         </NavLink>
-        <NavLink to="/portfolio" className="portfolio-link">
+        <NavLink to="/projects" className="portfolio-link">
           <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+        </NavLink>
+        <NavLink to="/dashboard" className="dashboard-link">
+          <FontAwesomeIcon icon={faLock} color="#4d4d4d" />{' '}
         </NavLink>
       </nav>
 
