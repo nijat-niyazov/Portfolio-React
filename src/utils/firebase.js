@@ -6,12 +6,12 @@ import { getStorage } from 'firebase/storage';
 // dotenv.config();
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBHv2PNUSQHRNKp0LDM5Qml33CKpNLtHTY',
-  authDomain: 'portfolio-firebase-pr.firebaseapp.com',
-  projectId: 'portfolio-firebase-pr',
-  storageBucket: 'portfolio-firebase-pr.appspot.com',
-  messagingSenderId: '567277042282',
-  appId: '1:567277042282:web:c29663f779a4075db22813',
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

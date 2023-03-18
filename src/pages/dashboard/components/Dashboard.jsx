@@ -6,22 +6,8 @@ import { database, signOut, storage } from '../../../utils/firebase';
 const Dashboard = () => {
   const formRef = useRef(null);
 
-  // useEffect(() => {
-  //   const formData = new FormData(formRef.current);
-  //   const values = {};
-
-  //   formData.forEach((value, key) => {
-  //     values[key] = value;
-  //   });
-
-  //   const { title, description, stacks, url, cover } = values;
-
-  //   console.log(cover);
-  // });
-
   const uploadProject = e => {
     e.preventDefault();
-    console.log('sumited');
     const formData = new FormData(formRef.current);
     const values = {};
 
@@ -29,7 +15,7 @@ const Dashboard = () => {
       values[key] = value;
     });
 
-    const { title, description, stacks, url, cover } = values;
+    const { cover } = values;
     const storageRef = ref(storage, cover?.name);
     // our created storage ⤴ img.url by its name ⤴
 
