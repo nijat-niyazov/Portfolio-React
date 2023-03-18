@@ -25,10 +25,3 @@ const provider = new GoogleAuthProvider();
 
 export const signInWithGoogle = () => signInWithPopup(auth, provider);
 export const signOut = () => auth.signOut();
-
-// apiKey: process.env.PORTFOLIO_API_KEY,
-// authDomain: process.env.PORTFOLIO_AUTH_DOMAIN,
-// projectId: process.env.PORTFOLIO_PROJECT_ID,
-// storageBucket: process.env.PORTFOLIO_STORAGE_BUCKET,
-// messagingSenderId: process.env.PORTFOLIO_MESSAGING_SENDER_ID,
-// appId: process.env.PORTFOLIO_APP_ID
