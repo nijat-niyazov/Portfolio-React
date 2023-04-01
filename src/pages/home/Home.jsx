@@ -11,7 +11,7 @@ const Home = () => {
   const { className, arr: hi } = useLetterAnimations("Hi, I'm");
   const { arr: name } = useLetterAnimations('ijat');
   const { arr: introduce } = useLetterAnimations("and I'm a");
-  const { arr: job } = useLetterAnimations('react developer');
+  const { arr: job } = useLetterAnimations('React developer');
 
   return (
     <>
