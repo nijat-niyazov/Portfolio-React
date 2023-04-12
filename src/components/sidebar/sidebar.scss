@@ -172,25 +172,32 @@
     nav {
       width: 100%;
       top: 0;
-      left: 0;
+      left: 100%;
       background: #181818;
       height: 100%;
       margin: 0;
       z-index: 2;
       position: fixed;
+      transition: all 0.3s;
 
       &.mobile {
-        width: 100%;
+        display: block;
         transition: all 0.3s;
         &.show {
-          display: block;
+          left: 0;
         }
+      }
+
+      .links {
+        margin-top: 50px;
       }
 
       a {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
+        margin: auto;
+        width: 120px;
       }
 
       a:after {

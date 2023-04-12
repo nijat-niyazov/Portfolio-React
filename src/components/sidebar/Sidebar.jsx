@@ -37,37 +37,43 @@ const Sidebar = () => {
       </Link>
 
       <nav className={showNav ? 'mobile show' : 'mobile'}>
-        <NavLink to="/" className="home-link">
-          <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-        </NavLink>
-        <NavLink
-          to="about"
-          className="about-link"
-          onClick={() => setShowNav(false)}
-        >
-          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
-        </NavLink>
-        <NavLink
-          to="/contact"
-          className="contact-link"
-          onClick={() => setShowNav(false)}
-        >
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
-        </NavLink>
-        <NavLink
-          to="/projects"
-          className="portfolio-link"
-          onClick={() => setShowNav(false)}
-        >
-          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
-        </NavLink>
-        <NavLink
-          to="/dashboard"
-          className="dashboard-link"
-          onClick={() => setShowNav(false)}
-        >
-          <FontAwesomeIcon icon={faLock} color="#4d4d4d" />
-        </NavLink>
+        <div className="links">
+          <NavLink
+            to="/"
+            className="home-link"
+            onClick={() => setShowNav(false)}
+          >
+            <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+          </NavLink>
+          <NavLink
+            to="about"
+            className="about-link"
+            onClick={() => setShowNav(false)}
+          >
+            <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className="contact-link"
+            onClick={() => setShowNav(false)}
+          >
+            <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          </NavLink>
+          <NavLink
+            to="/projects"
+            className="portfolio-link"
+            onClick={() => setShowNav(false)}
+          >
+            <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+          </NavLink>
+          <NavLink
+            to="/dashboard"
+            className="dashboard-link"
+            onClick={() => setShowNav(false)}
+          >
+            <FontAwesomeIcon icon={faLock} color="#4d4d4d" />
+          </NavLink>
+        </div>
         <FontAwesomeIcon
           onClick={() => setShowNav(false)}
           icon={faClose}
