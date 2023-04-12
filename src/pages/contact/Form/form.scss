@@ -36,6 +36,12 @@
 
       .half {
         width: 49%;
+        margin-left: 2%;
+        float: left;
+        clear: none;
+        &:first-child {
+          margin-left: 0;
+        }
       }
     }
 
@@ -70,5 +76,12 @@
       cursor: pointer;
       font-weight: 700;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-form {
+    display: flex;
+    flex-direction: row;
   }
 }

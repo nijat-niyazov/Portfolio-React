@@ -57,7 +57,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div style={{ marginLeft: '200px', marginTop: '50px' }}>
+    <div
+      style={{ marginLeft: '200px', marginTop: '50px' }}
+      className="dashboard"
+    >
       <form
         ref={formRef}
         style={{
